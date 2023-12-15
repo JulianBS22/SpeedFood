@@ -5,10 +5,7 @@ import { RestaurantServingFoodComponent } from './components/restaurant-serving-
 import { RestaurantFoodItemComponent } from './components/restaurant-food-item/restaurant-food-item.component';
 
 const routes: Routes = [
-  {
-    path:"**",
-    component:FoodsComponent
-  },
+ 
   {
     path:'foods',
     component:FoodsComponent
@@ -20,7 +17,11 @@ const routes: Routes = [
   {
     path: 'restaurant-food-item/:restaurantId/:foodId',
     component: RestaurantFoodItemComponent
+  } , {
+    path:"**",
+    component:FoodsComponent
   }
+  
 ];
 
 @NgModule({

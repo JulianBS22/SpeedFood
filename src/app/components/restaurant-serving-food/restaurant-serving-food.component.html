@@ -1,1 +1,27 @@
-<p>restaurant-serving-food works!</p>
+<div class="row">
+    <div class="col-4" *ngFor="let item of restaurantList">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <img class="img-height" [src]="item.photoUrl"/>
+                    </div>
+                    <div class="col-9 text-end">
+                        {{item.categoryName}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-4 ">
+                        {{item.restaurantName}}
+                    </div>
+                    <div class="col-4 text-center">
+                        {{item.openingHours}}
+                    </div>
+                    <div class="col-4 text-end">
+                        <button class="btn btn-success btm-sm" (click)="navigate (item.restaurantID)" [disabled]="item.avilability">Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

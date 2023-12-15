@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FoodService } from './../../service/food.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class FoodsComponent implements OnInit {
 
   foodItems: any[] = [];
-  constructor(private foodService:FoodService) {}
+  
+  constructor(private foodService: FoodService, private router: Router) {}
+  
   ngOnInit(): void {
     this.loadAllFoodCategory();
   }
@@ -18,5 +21,9 @@ export class FoodsComponent implements OnInit {
     this.foodService.getAllFoods().subscribe((res:any)=>{
     this.foodItems = res.data;
     })
+  }
+  navigateToRestaurantFoods ( categoryId: number ) {
+    this.router.navigate (['/restaurant-foods', categoryId ])
+
   }
 }

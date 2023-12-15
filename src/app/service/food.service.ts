@@ -12,4 +12,8 @@ export class FoodService {
   getAllFoods(): Observable<any> {
     return this.http.get (this.apiEndpoint + "GetAllFoodCategory")
   }
+
+  GetRestaurantServingByCategoryId(foodCategoryId: number): Observable<any>{
+    return this.http.get(this.apiEndpoint +'GetRestaurantServingByCategoryId?categoryId=' + foodCategoryId )
+  }
 }
