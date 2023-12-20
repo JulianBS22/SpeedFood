@@ -15,7 +15,7 @@ const routes: Routes = [
     component: RestaurantServingFoodComponent
   },
   {
-    path: 'restaurant-food-item/:restaurantId/:foodId',
+    path: 'restaurant-food-item/:restaurantId/:categoryId',
     component: RestaurantFoodItemComponent
   } , {
     path:"**",

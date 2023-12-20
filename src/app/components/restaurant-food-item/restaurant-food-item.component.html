@@ -1,1 +1,36 @@
-<p>restaurant-food-item works!</p>
+<div class="row">
+    <div class="col-4" *ngFor="let item of foodItemList">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        <img class="img-height" [src]="item.photoUrl"/>
+                    </div>
+                    <div class="col-9 text-end text-justify">
+                        <p>categoria</p>
+                        {{item.categoryName}}
+                        <br>
+                        <p>descripcion</p>
+                        <small>{{item.description}}</small>
+                    </div>
+                </div>
+                <div class="row">
+                    
+                    <div class="col-4 ">
+                        <p>precio</p>
+                        {{item.price}}€
+                    </div>
+                    
+                    <div class="col-4 text-end">
+                        <button class="btn btn-success btm-sm">Add to Card</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12" *ngIf="foodItemList.length==0">
+        <p>Sin productos</p>
+    </div>
+</div>

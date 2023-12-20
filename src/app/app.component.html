@@ -10,9 +10,9 @@
           <a class="nav-link" routerLink="/foods">SpeedFood</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search">
-        <button class="btn btn-primary" type="button">Search</button>
+      <form class="d-flex gap-3" >
+        <button class="btn btn-primary" type="button" (click)="OnLogin()">Login</button>
+        <button class="btn btn-primary" type="button" (click)="OnRegister()">Registro</button>
       </form>
     </div>
   </div>
@@ -20,4 +20,80 @@
 <div class="container">
   <router-outlet></router-outlet>
 </div>
+<!-- Button to Open the Modal -->
 
+<!-- The Modal -->
+<div class="modal" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Login</h4>
+        <button type="button" class="btn-close" (click)="CloseLogin()" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6">
+            <label for="">Nombre</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="">Password</label>
+            <input type="text" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger"  data-bs-dismiss="modal">Login</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- The Modal -->
+<div class="modal" id="registerModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Registro</h4>
+        <button type="button" class="btn-close" (click)="CloseRegister()" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-6">
+            <label for="">EmailId</label>
+            <input type="text" [(ngModel)]="registerObj.emailId" class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="">Número de Teléfono</label>
+            <input type="text" [(ngModel)]="registerObj.mobileNo" class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="">Nombre de Usuario</label>
+            <input type="text" [(ngModel)]="registerObj.userName" class="form-control">
+          </div>
+          <div class="col-6">
+            <label for="">Password</label>
+            <input type="text" [(ngModel)]="registerObj.password" class="form-control">
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="OnSave()" data-bs-dismiss="modal">Registrarse</button>
+      </div>
+
+    </div>
+  </div>
+</div>
